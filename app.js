@@ -6,7 +6,8 @@ const searchMeal = () => {
         .then(response => response.json())
         .then(data => {
             displayMeals(data);
-        });
+        })
+        .catch(err => alert(err));
 }
 const displayMeals = data => {
     const mealsDiv = document.getElementById('mealsArea');
@@ -35,6 +36,7 @@ const mealDetails = meal => {
         .then(data => {
             displayIngredients(data);
         })
+        .catch(err => alert(err));
 }
 
 const displayIngredients = data => {
